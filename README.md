@@ -1,2 +1,2 @@
 # bee
-Object-Oriented Automated Data Collection Script
+Object-Oriented Automated Data Collection Script.
