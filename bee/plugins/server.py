@@ -4,7 +4,7 @@ from bee.plugins.base import BasePlugin
 from bee.utils.tools import BaseResponse
 
 
-class BasicPlugin(BasePlugin):
+class ServerPlugin(BasePlugin):
 
     def os_platform(self):
         if self.test_mode:

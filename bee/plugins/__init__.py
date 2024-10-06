@@ -1,11 +1,11 @@
 import importlib
 
 from bee import settings
-from bee.plugins.basic import BasicPlugin
+from bee.plugins.server import ServerPlugin
 
 
 def get_server_info():
-    response = BasicPlugin().execute()
+    response = ServerPlugin().execute()
     if not response.status:
         return response
     for k, v in settings.PLUGINS_DICT.items():
