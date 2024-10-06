@@ -1,31 +1,21 @@
-import os
+from pathlib import Path
 
-BASEDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+basedir = Path(__file__).resolve().parent.parent
 
-KEY = '299095cc-1330-11e5-b06a-a45e60bec08b'  # 用于API认证的KEY
-AUTH_KEY_NAME = 'auth-key'  # 用于API认证的请求头
+KEY = '299095cc-1330-11e5-b06a-a45e60bec08b'
+AUTH_KEY_NAME = 'auth-key'
 
-ERROR_LOG_FILE = os.path.join(BASEDIR, 'logs', 'error.log')
-RUN_LOG_FILE = os.path.join(BASEDIR, 'logs', 'run.log')
+error_log_file = basedir.joinpath('logs', 'error.log')
+run_log_file = basedir.joinpath('logs', 'run.log')
 
-CERT_FILE_PATH = os.path.join(BASEDIR, 'cert', 'hostname')  # Agent模式保存服务器唯一ID的文件
+cert_file_path = basedir.joinpath('cert', 'hostname')
 
-TEST_MODE = True
+test_mode = True
 
-MODE = 'agent'
+mode = 'agent'
 
-# 采集硬件数据的插件
-PLUGINS_DICT = {
+plugins_dict = {
     'board': 'bee.plugins.board.BoardPlugin',
 }
 
-# 资产信息API
-ASSET_API = 'http://127.0.0.1:8000/api/asset'
-
-'''
-POST时，返回值：{'code': xx, 'message': 'xx'}
- code:
-    - 1000 成功;
-    - 1001 接口授权失败;
-    - 1002 数据库中资产不存在
-'''
+asset_api = 'http://127.0.0.1:5000/api/asset'

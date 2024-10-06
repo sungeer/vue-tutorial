@@ -8,7 +8,7 @@ class BasePlugin:
 
     def __init__(self, hostname=''):
         self.logger = logger
-        self.test_mode = settings.TEST_MODE
+        self.test_mode = settings.test_mode
         self.mode_list = ['agent']
         self.mode = getattr(settings, 'MODE', 'agent')
         self.hostname = hostname

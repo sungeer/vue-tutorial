@@ -7,8 +7,8 @@ from bee import settings
 class Logger:
 
     def __init__(self):
-        self.run_log_file = Path(settings.RUN_LOG_FILE)
-        self.error_log_file = Path(settings.ERROR_LOG_FILE)
+        self.run_log_file = Path(settings.run_log_file)
+        self.error_log_file = Path(settings.error_log_file)
 
         self.run_logger = self._initialize_logger(self.run_log_file, 'run_log', logging.INFO)
         self.error_logger = self._initialize_logger(self.error_log_file, 'error_log', logging.ERROR)

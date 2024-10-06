@@ -8,7 +8,7 @@ def get_server_info():
     response = ServerPlugin().execute()
     if not response.status:
         return response
-    for k, v in settings.PLUGINS_DICT.items():
+    for k, v in settings.plugins_dict.items():
         module_path, cls_name = v.rsplit('.', 1)
         cls = getattr(importlib.import_module(module_path), cls_name)
         obj = cls().execute()

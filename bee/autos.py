@@ -1,6 +1,6 @@
-import os
 import time
 import hashlib
+from pathlib import Path
 
 import requests
 
@@ -12,7 +12,7 @@ from bee.utils.logs import logger
 class AutoBase:
 
     def __init__(self):
-        self.asset_api = settings.ASSET_API
+        self.asset_api = settings.asset_api
         self.key = settings.KEY
         self.key_name = settings.AUTH_KEY_NAME
 
@@ -64,10 +64,11 @@ class AutoAgent(AutoBase):
 
     def __init__(self):
         super().__init__()
-        self.cert_file_path = settings.CERT_FILE_PATH
+        self.cert_file_path = settings.cert_file_path
 
     def load_local_cert(self):
-        if not os.path.exists(self.cert_file_path):
+        cert_file_path = Path(self.cert_file_path)
+        if not cert_file_path.exists():
             return None
         with open(self.cert_file_path, mode='r') as f:
             data = f.read()
@@ -77,8 +78,9 @@ class AutoAgent(AutoBase):
         return cert
 
     def write_local_cert(self, cert):
-        if not os.path.exists(self.cert_file_path):
-            os.makedirs(os.path.basename(self.cert_file_path))
+        cert_file_path = Path(self.cert_file_path)
+        if not cert_file_path.exists():
+            cert_file_path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.cert_file_path, mode='w') as f:
             f.write(cert)
 

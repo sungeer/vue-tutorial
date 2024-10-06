@@ -1,7 +1,6 @@
-import os
 import traceback
 
-from bee.settings import BASEDIR
+from bee.settings import basedir
 from bee.plugins.base import BasePlugin
 from bee.utils.tools import BaseResponse
 
@@ -12,7 +11,7 @@ class BoardPlugin(BasePlugin):
         response = BaseResponse()
         try:
             if self.test_mode:
-                file_path = os.path.join(BASEDIR, 'files/board.out')
+                file_path = basedir.joinpath('files', 'board.out')
                 with open(file_path, 'r') as file:
                     output = file.read()
             else:
