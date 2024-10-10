@@ -1,7 +1,7 @@
 import subprocess
 
 from bee import settings
-from bee.utils.logs import logger
+from bee.utils.log_util import logger
 
 
 class BasePlugin:

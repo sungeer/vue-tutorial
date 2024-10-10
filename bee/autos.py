@@ -6,7 +6,7 @@ import requests
 
 from bee import settings, plugins
 from bee.utils import tools
-from bee.utils.logs import logger
+from bee.utils.log_util import logger
 
 
 class AutoBase:
