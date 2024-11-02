@@ -13,8 +13,8 @@ class AutoBase:
 
     def __init__(self):
         self.asset_api = settings.asset_api
-        self.key = settings.KEY
-        self.key_name = settings.AUTH_KEY_NAME
+        self.key = settings.auth_key
+        self.key_name = settings.auth_key_name
 
     def auth_key(self):
         ha = hashlib.md5(self.key.encode('utf-8'))

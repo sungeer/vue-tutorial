@@ -10,7 +10,7 @@ class BasePlugin:
         self.logger = logger
         self.test_mode = settings.test_mode
         self.mode_list = ['agent']
-        self.mode = getattr(settings, 'MODE', 'agent')
+        self.mode = getattr(settings, 'mode', 'agent')
         self.hostname = hostname
 
     @staticmethod

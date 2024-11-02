@@ -7,6 +7,22 @@ from bee.utils.tools import BaseResponse
 
 class BoardPlugin(BasePlugin):
 
+    @staticmethod
+    def parse(content):
+        result = {}
+        key_map = {
+            'Manufacturer': 'manufacturer',
+            'Product Name': 'model',
+            'Serial Number': 'sn',
+        }
+        for item in content.split('\n'):
+            row_data = item.strip().split(':')
+            if len(row_data) == 2:
+                key, value = row_data
+                if key in key_map:
+                    result[key_map[key]] = value.strip()
+        return result
+
     def linux(self):
         response = BaseResponse()
         try:
@@ -24,19 +40,3 @@ class BoardPlugin(BasePlugin):
             response.status = False
             response.error = msg
         return response
-
-    @staticmethod
-    def parse(content):
-        result = {}
-        key_map = {
-            'Manufacturer': 'manufacturer',
-            'Product Name': 'model',
-            'Serial Number': 'sn',
-        }
-        for item in content.split('\n'):
-            row_data = item.strip().split(':')
-            if len(row_data) == 2:
-                key, value = row_data
-                if key in key_map:
-                    result[key_map[key]] = value.strip()
-        return result
