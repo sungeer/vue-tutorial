@@ -62,9 +62,7 @@
 - `setup` 返回响应式数据
 - `ref` 适合原始类型
 
-代码文件名建议：step1.html
-
-（从教程中复制“步骤1：最小应用”的完整 HTML 代码）
+代码文件名：step1.html
 
 ---
 
@@ -76,9 +74,7 @@
 - `v-for="h in heroes" :key="h.id"`
 - 模板插值 `{{ }}`
 
-代码文件名建议：step2.html
-
-（从教程中复制“步骤2：静态列表”的完整 HTML 代码）
+代码文件名：step2.html
 
 ---
 
@@ -91,9 +87,7 @@
 - `onAddNameInput(e) { addForm.name = e.target.value }`
 - 受控输入便于校验、调试与测试
 
-代码文件名建议：step3.html
-
-（从教程中复制“步骤3：受控输入”的完整 HTML 代码）
+代码文件名：step3.html
 
 ---
 
@@ -107,9 +101,7 @@
 - `prepareHeroHp`（字符串转数值，取整，最小为 0）
 - `addHeroToList`（不可变添加，返回新数组与 nextId）
 
-代码文件名建议：step4.html
-
-（从教程中复制“步骤4：纯函数区”的完整 HTML 代码）
+代码文件名：step4.html
 
 ---
 
@@ -122,9 +114,7 @@
 - `removeHeroFromList`（`slice + splice` 返回新数组）
 - 列表中添加“删除”按钮与点击事件
 
-代码文件名建议：step5.html
-
-（从教程中复制“步骤5：删除功能”的完整 HTML 代码）
+代码文件名：step5.html
 
 ---
 
@@ -138,9 +128,7 @@
 - `startEditing`：根据 id 找到英雄，设置 `editingId` 并填充 `editForm`
 - `cancelEditing`：重置 `editingId` 与 `editForm`
 
-代码文件名建议：step6.html
-
-（从教程中复制“步骤6：编辑模式切换”的完整 HTML 代码）
+代码文件名：step6.html
 
 ---
 
@@ -153,9 +141,7 @@
 - 提交前校验 `editForm.id` 与 `editingId` 合法
 - 提交后调用 `cancelEditing` 复位状态
 
-代码文件名建议：step7.html
-
-（从教程中复制“步骤7：更新功能”的完整 HTML 代码）
+代码文件名：step7.html
 
 ---
 
@@ -168,11 +154,7 @@
 - 初始 `nextId`：扫描现有 heroes 的最大 id
 - 新增（受控输入 + 纯函数）/ 编辑（填充、提交）/ 删除（不可变）
 
-代码文件名建议：step8.html
-
-（从教程中复制“步骤8：完整功能”的完整 HTML 代码）
-
-提示：若想获得更精美的视觉样式，可把 step8 的样式替换为你原始示例的 CSS，即可呈现最终效果。
+代码文件名：step8.html
 
 ---
 
