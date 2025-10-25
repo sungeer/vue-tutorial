@@ -30,7 +30,7 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 <script>
     (function () {
-        var reactive = Vue.reactive;  // 适合对象、数组的响应式
+        var reactive = Vue.reactive;  // 用于对象、数组的响应式
         var ref = Vue.ref;
 
         function createEmptyHero() {
@@ -40,7 +40,7 @@
         var app = Vue.createApp({
             setup: function () {
                 var title = ref('英雄管理面板（步骤3）');
-                var addForm = reactive(createEmptyHero());
+                var addForm = reactive(createEmptyHero());  // 将一个对象变成响应式对象
 
                 function onAddNameInput(e) {
                     addForm.name = e.target.value;
