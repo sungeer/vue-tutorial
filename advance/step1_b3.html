@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>步骤3 最小化：v-model 对比</title>
+    <style>
+        [v-cloak]{display:none}
+        body{font-family:system-ui;margin:20px}
+        .row{margin:8px 0}
+        label{display:inline-block;width:80px}
+        input{padding:6px 8px}
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <h1>{{ title }}</h1>
+
+        <div class="row">
+            <label for="name">名称</label>
+            <!-- 改动：使用 v-model 代替 :value + @input -->
+            <input id="name" type="text" v-model="addForm.name">
+        </div>
+        <div class="row">
+            <label for="hp">血量</label>
+            <!-- 改动：使用 v-model 代替 :value + @input -->
+            <input id="hp" type="number" min="0" v-model="addForm.hp">
+        </div>
+        <p>当前表单：{{ addForm }}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script>
+        (function () {
+            var reactive = Vue.reactive;
+            var ref = Vue.ref;
+
+            function createEmptyHero() {
+                return { id: 0, name: '', hp: '' };
+            }
+
+            var app = Vue.createApp({
+                setup: function () {
+                    var title = ref('英雄管理面板（步骤3：v-model 对比）');
+                    var addForm = reactive(createEmptyHero());
+
+                    // 注意：不再需要 onAddNameInput/onAddHpInput 处理器
+
+                    return {
+                        title: title,
+                        addForm: addForm
+                    };
+                }
+            });
+
+            app.mount('#app');
+        })();
+    </script>
+</body>
+</html>
