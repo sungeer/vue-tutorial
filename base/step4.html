@@ -49,7 +49,6 @@
         var ref = Vue.ref;
         var reactive = Vue.reactive;
 
-        // 纯函数区
         function createEmptyHero() {
             return { id: 0, name: '', hp: '' };
         }
@@ -86,10 +85,15 @@
                     { id: 2, name: '提莫', hp: 320 }
                 ]);
                 var nextId = ref(2);
-                var addForm = reactive(createEmptyHero());
+                var addForm = reactive(createEmptyHero());  // 将 对象 变成 响应式 对象
 
-                function onAddNameInput(e) { addForm.name = e.target.value; }
-                function onAddHpInput(e) { addForm.hp = e.target.value; }
+                function onAddNameInput(e) {
+                    addForm.name = e.target.value;
+                }
+
+                function onAddHpInput(e) {
+                    addForm.hp = e.target.value;
+                }
 
                 function submitAdd() {
                     var result = addHeroToList(heroes.value, nextId.value, addForm);
