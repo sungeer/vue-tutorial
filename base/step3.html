@@ -40,7 +40,7 @@
         var app = Vue.createApp({
             setup: function () {
                 var title = ref('英雄管理面板（步骤3）');
-                var addForm = reactive(createEmptyHero());  // 将一个对象变成响应式对象
+                var addForm = reactive(createEmptyHero());  // 将一个 对象 变成 响应式 对象
 
                 function onAddNameInput(e) {
                     addForm.name = e.target.value;
