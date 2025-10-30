@@ -53,7 +53,7 @@
             var idx = findHeroIndexById(list, heroId);
             if (idx === -1) return list;
             var copy = list.slice();
-            copy.splice(idx, 1);
+            copy.splice(idx, 1);  // 从索引 idx 开始删除 1 条数据
             return copy;
         }
 
@@ -67,6 +67,7 @@
                 ]);
 
                 function removeHero(heroId) {
+                    // 返回一个新数组并整体替换
                     heroes.value = removeHeroFromList(heroes.value, heroId);
                 }
 
