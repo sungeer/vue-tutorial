@@ -1,6 +1,6 @@
 # vue-tutorial
 
-A crud made with JavaScript.
+A crud made with Vue.
 
 ---
 
